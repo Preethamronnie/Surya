@@ -1,0 +1,15 @@
+from loader import load_and_split_pdfs
+from vectorstore import create_vectorstore, save_vectorstore
+
+print("Loading PDFs...")
+documents = load_and_split_pdfs("data/manuals")
+
+print(f"Total chunks created: {len(documents)}")
+
+print("Creating vector database...")
+vectorstore = create_vectorstore(documents)
+
+print("Saving vector database...")
+save_vectorstore(vectorstore, "data/vectordb")
+
+print("Done! Vector DB is ready.")

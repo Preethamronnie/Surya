@@ -1,0 +1,13 @@
+from langchain_community.vectorstores import FAISS
+from embedder import get_embeddings
+
+def create_vectorstore(documents):
+    embeddings = get_embeddings()
+    return FAISS.from_documents(documents, embeddings)
+
+def save_vectorstore(vectorstore, path="data/vectordb"):
+    vectorstore.save_local(path)
+
+def load_vectorstore(path="data/vectordb"):
+    embeddings = get_embeddings()
+    return FAISS.load_local(path, embeddings, allow_dangerous_deserialization=True)

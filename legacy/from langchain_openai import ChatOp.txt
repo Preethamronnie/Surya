@@ -1,0 +1,22 @@
+from langchain_openai import ChatOpenAI
+from langchain.chains import RetrievalQA
+
+def build_rag_chain(retriever):
+    llm = ChatOpenAI(
+        model="gpt-4o-mini",
+        temperature=0
+    )
+    return RetrievalQA.from_chain_type(
+        llm=llm,
+        retriever=retriever,
+        return_source_documents=True
+    )
+
+def query_rag(rag_chain, question):
+    response = rag_chain.invoke({"query": question})
+    return {
+        "answer": response["result"],
+        "sources": [
+            doc.metadata.get("source") for doc in response["source_documents"]
+        ]
+    }
