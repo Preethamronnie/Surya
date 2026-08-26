@@ -1,0 +1,5 @@
+# Language stats: this is a Python project. The chat UI is a single large HTML
+# file that would otherwise dominate GitHub's byte-count-based detection.
+static/*.html linguist-detectable=false
+legacy/* linguist-vendored
+docs/* linguist-documentation
