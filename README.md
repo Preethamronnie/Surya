@@ -1,11 +1,11 @@
 # SURYA AI
 
-Retrieval-augmented Q&A over FIMER PVS980-58 solar inverter manuals. Ask a field
-question in plain English, get an answer grounded in the manual text with page
-citations.
-
-FastAPI backend + FAISS vector store + local HuggingFace embeddings + OpenAI for
-generation.
+Developed a Retrieval-Augmented Generation (RAG) application to answer technical questions using FIMER PVS980-58 inverter manuals.
+- Implemented PDF ingestion, text chunking, embedding generation, and FAISS-based vector retrieval.
+- Built a FastAPI backend with a retrieval-based question-answering pipeline.
+- Designed responses to ground technical answers in manual content and provide page citations.
+- Developed a web-based chat interface for querying technical documentation.
+Technologies: Python, FastAPI, LangChain, FAISS, Hugging Face Embeddings, OpenAI API.
 
 ## Layout
 
